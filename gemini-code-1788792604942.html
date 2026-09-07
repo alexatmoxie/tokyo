@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東京極簡漫旅 2026 | Alex's Travel Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        muji: {
+                            bg: '#F7F5F0',
+                            card: '#FFFFFF',
+                            panel: '#F0ECE4',
+                            border: '#E3DDD3',
+                            text: '#383533',
+                            muted: '#7A7571',
+                            sage: '#738271',
+                            earth: '#A48B71',
+                            terracotta: '#C87A65'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+            background-color: #F7F5F0;
+            color: #383533;
+        }
+        .muji-glass {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
+            border: 1px solid #E3DDD3;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #F7F5F0;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #D5CFC5;
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #738271;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col custom-scrollbar pb-16 md:pb-0">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 muji-glass border-b border-muji-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo & Title -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-muji-earth flex items-center justify-center text-white font-bold text-lg shadow-sm">
+                        A
+                    </div>
+                    <div>
+                        <h1 class="text-base font-bold text-muji-text tracking-wide">TOKYO 2026</h1>
+                        <p class="text-xs text-muji-sage font-mono">09/11 – 09/17 • Muji Style Guide</p>
+                    </div>
+                </div>
+
+                <!-- Flight Quick Badge -->
+                <div class="hidden md:flex items-center space-x-4 bg-muji-panel px-4 py-2 rounded-xl border border-muji-border text-xs font-mono text-muji-text">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-plane-departure text-muji-sage"></i>
+                        <span>UO870 (10:35 HKG)</span>
+                    </div>
+                    <span class="text-muji-border">|</span>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-ticket text-muji-earth"></i>
+                        <span>PNR: <strong class="text-muji-text">TDIV7K</strong></span>
+                    </div>
+                </div>
+
+                <!-- Countdown Badge -->
+                <div class="bg-muji-sage/10 border border-muji-sage/30 px-3.5 py-1.5 rounded-full flex items-center space-x-2">
+                    <span class="w-2 h-2 rounded-full bg-muji-sage animate-pulse"></span>
+                    <span id="countdown" class="text-xs font-mono font-medium text-muji-sage">計算倒數中...</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+        <!-- ☀️ Weather Forecast Widget (Directly Under Tokyo 2026) -->
+        <div class="bg-muji-card p-5 sm:p-6 rounded-2xl border border-muji-border shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-muji-border gap-2">
+                <div class="flex items-center space-x-2.5">
+                    <div class="w-8 h-8 rounded-lg bg-muji-panel border border-muji-border flex items-center justify-center text-muji-earth">
+                        <i class="fa-solid fa-cloud-sun text-base"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-sm sm:text-base font-bold text-muji-text flex items-center">
+                            東京 7 天天氣預測指南 (9/11 – 9/17)
+                        </h2>
+                        <p class="text-xs text-muji-muted">關東氣象實況數據 • 氣溫、降水機率與穿搭提示</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3 text-[11px] text-muji-muted font-mono bg-muji-panel px-3 py-1 rounded-lg border border-muji-border w-fit">
+                    <span><span class="inline-block w-2 h-2 rounded-full bg-orange-500 mr-1"></span>最高溫</span>
+                    <span><span class="inline-block w-2 h-2 rounded-full bg-blue-500 mr-1"></span>最低溫</span>
+                    <span><span class="inline-block w-2 h-2 rounded-full bg-gray-600 mr-1"></span>降水機率</span>
+                </div>
+            </div>
+
+            <!-- Weather Grid Table -->
+            <div class="overflow-x-auto custom-scrollbar mt-4">
+                <table class="w-full text-center border-collapse min-w-[620px]">
+                    <thead>
+                        <!-- 日期欄 -->
+                        <tr class="border-b border-muji-border/70 text-xs">
+                            <th class="py-2.5 px-3 font-semibold text-muji-muted bg-muji-panel/50 rounded-l-xl w-16">日</th>
+                            <th class="py-2.5 px-3 font-bold text-muji-text">
+                                <div class="text-sm">11</div>
+                                <div class="text-[11px] font-normal text-muji-muted">(金)</div>
+                            </th>
+                            <th class="py-2.5 px-3 font-bold text-blue-600">
+                                <div class="text-sm">12</div>
+                                <div class="text-[11px] font-normal text-blue-500">(土)</div>
+                            </th>
+                            <th class="py-2.5 px-3 font-bold text-red-500">
+                                <div class="text-sm">13</div>
+                                <div class="text-[11px] font-normal text-red-400">(日)</div>
+                            </th>
+                            <th class="py-2.5 px-3 font-bold text-muji-text">
+                                <div class="text-sm">14</div>
+                                <div class="text-[11px] font-normal text-muji-muted">(月)</div>
+                            </th>
+                            <th class="py-2.5 px-3 font-bold text-muji-text">
+                                <div class="text-sm">15</div>
+                                <div class="text-[11px] font-normal text-muji-muted">(火)</div>
+                            </th>
+                            <th class="py-2.5 px-3 font-bold text-muji-text">
+                                <div class="text-sm">16</div>
+                                <div class="text-[11px] font-normal text-muji-muted">(水)</div>
+                            </th>
+                            <th class="py-2.5 px-3 font-bold text-muji-text rounded-r-xl">
+                                <div class="text-sm">17</div>
+                                <div class="text-[11px] font-normal text-muji-muted">(木)</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-muji-border/40 text-xs">
+                        <!-- 天氣圖標欄 -->
+                        <tr>
+                            <td class="py-3 px-3 font-semibold text-muji-muted bg-muji-panel/50">天気</td>
+                            <!-- 11 -->
+                            <td class="py-3 px-3">
+                                <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-base shadow-sm relative">
+                                    <i class="fa-solid fa-cloud text-xs absolute top-2 left-2"></i>
+                                    <div class="absolute bottom-1 right-1 bg-blue-500 rounded p-0.5 px-1 text-[9px] flex items-center">
+                                        <i class="fa-solid fa-cloud-rain"></i>
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- 12 -->
+                            <td class="py-3 px-3">
+                                <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-lg shadow-sm">
+                                    <i class="fa-solid fa-cloud"></i>
+                                </div>
+                            </td>
+                            <!-- 13 -->
+                            <td class="py-3 px-3">
+                                <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-base shadow-sm relative">
+                                    <i class="fa-solid fa-cloud text-xs absolute top-2 left-2"></i>
+                                    <div class="absolute bottom-1 right-1 bg-orange-500 rounded p-0.5 px-1 text-[9px] flex items-center">
+                                        <i class="fa-solid fa-sun"></i>
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- 14 -->
+                            <td class="py-3 px-3">
+                                <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-base shadow-sm relative">
+                                    <i class="fa-solid fa-cloud text-xs absolute top-2 left-2"></i>
+                                    <div class="absolute bottom-1 right-1 bg-orange-500 rounded p-0.5 px-1 text-[9px] flex items-center">
+                                        <i class="fa-solid fa-sun"></i>
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- 15 -->
+                            <td class="py-3 px-3">
+                                <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-base shadow-sm relative">
+                                    <i class="fa-solid fa-cloud text-xs absolute top-2 left-2"></i>
+                                    <div class="absolute bottom-1 right-1 bg-blue-500 rounded p-0.5 px-1 text-[9px] flex items-center">
+                                        <i class="fa-solid fa-cloud-showers-heavy"></i>
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- 16 -->
+                            <td class="py-3 px-3">
+                                <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-base shadow-sm relative">
+                                    <i class="fa-solid fa-cloud text-xs absolute top-2 left-2"></i>
+                                    <div class="absolute bottom-1 right-1 bg-blue-500 rounded p-0.5 px-1 text-[9px] flex items-center">
+                                        <i class="fa-solid fa-cloud-showers-heavy"></i>
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- 17 -->
+                            <td class="py-3 px-3">
+                                <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-lg shadow-sm">
+                                    <i class="fa-solid fa-cloud"></i>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- 最高氣溫欄 -->
+                        <tr>
+                            <td class="py-2.5 px-3 font-semibold text-muji-muted bg-muji-panel/50">最高</td>
+                            <td class="py-2.5 px-3 font-bold text-orange-600 font-mono text-sm">26<span class="text-xs font-normal">℃</span></td>
+                            <td class="py-2.5 px-3 font-bold text-orange-600 font-mono text-sm">27<span class="text-xs font-normal">℃</span></td>
+                            <td class="py-2.5 px-3 font-bold text-orange-600 font-mono text-sm">30<span class="text-xs font-normal">℃</span></td>
+                            <td class="py-2.5 px-3 font-bold text-orange-600 font-mono text-sm">31<span class="text-xs font-normal">℃</span></td>
+                            <td class="py-2.5 px-3 font-bold text-orange-600 font-mono text-sm">29<span class="text-xs font-normal">℃</span></td>
+                            <td class="py-2.5 px-3 font-bold text-orange-600 font-mono text-sm">27<span class="text-xs font-normal">℃</span></td>
+                            <td class="py-2.5 px-3 font-bold text-orange-600 font-mono text-sm">29<span class="text-xs font-normal">℃</span></td>
+                        </tr>
+
+                        <!-- 最低氣溫欄 -->
+                        <tr>
+                            <td class="py-2.5 px-3 font-semibold text-muji-muted bg-muji-panel/50">最低</td>
+                            <td class="py-2.5 px-3 font-bold text-blue-600 font-mono text-sm">20<span class="text-xs font-normal">℃</span></td>
+                            <td class="py-2.5 px-3 font-bold text-blue-600 font-mono text-sm">21<span class="text-xs font-normal">℃</span></td>
+                            <td class="py-2.5 px-3 font-bold text-blue-600 font-mono text-sm">22<span class="text-xs font-normal">℃</span></td>
+                            <td class="py-2.5 px-3 font-bold text-blue-600 font-mono text-sm">24<span class="text-xs font-normal">℃</span></td>
+                            <td class="py-2.5 px-3 font-bold text-blue-600 font-mono text-sm">24<span class="text-xs font-normal">℃</span></td>
+                            <td class="py-2.5 px-3 font-bold text-blue-600 font-mono text-sm">23<span class="text-xs font-normal">℃</span></td>
+                            <td class="py-2.5 px-3 font-bold text-blue-600 font-mono text-sm">23<span class="text-xs font-normal">℃</span></td>
+                        </tr>
+
+                        <!-- 降水機率欄 -->
+                        <tr>
+                            <td class="py-2.5 px-3 font-semibold text-muji-muted bg-muji-panel/50 rounded-bl-xl">降水</td>
+                            <td class="py-2.5 px-3 font-bold text-muji-text font-mono text-xs">60<span class="text-[10px] font-normal text-muji-muted">%</span></td>
+                            <td class="py-2.5 px-3 font-bold text-muji-text font-mono text-xs">40<span class="text-[10px] font-normal text-muji-muted">%</span></td>
+                            <td class="py-2.5 px-3 font-bold text-muji-text font-mono text-xs">30<span class="text-[10px] font-normal text-muji-muted">%</span></td>
+                            <td class="py-2.5 px-3 font-bold text-muji-text font-mono text-xs">30<span class="text-[10px] font-normal text-muji-muted">%</span></td>
+                            <td class="py-2.5 px-3 font-bold text-muji-text font-mono text-xs">60<span class="text-[10px] font-normal text-muji-muted">%</span></td>
+                            <td class="py-2.5 px-3 font-bold text-muji-text font-mono text-xs">60<span class="text-[10px] font-normal text-muji-muted">%</span></td>
+                            <td class="py-2.5 px-3 font-bold text-muji-text font-mono text-xs rounded-br-xl">40<span class="text-[10px] font-normal text-muji-muted">%</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 智慧天氣小提醒 -->
+            <div class="mt-4 p-3 bg-muji-panel rounded-xl border border-muji-border flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-muji-muted gap-2">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-circle-info text-muji-sage"></i>
+                    <span><strong>導遊貼士：</strong>9/11 (抵達日) 與 9/15-16 降水機率達 60%，建議隨身攜帶輕便折疊傘；9/12 調布花火日多雲 (40%降雨)，夜間氣溫約 21°C，體感涼爽建議備薄外套。</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Flight & Trip Status Banner -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="bg-muji-card p-4 rounded-2xl border border-muji-border shadow-sm border-l-4 border-l-muji-sage flex justify-between items-center">
+                <div>
+                    <p class="text-xs text-muji-muted uppercase tracking-wider">去程航班 (HK Express)</p>
+                    <p class="text-base font-bold text-muji-text mt-1">UO870 <span class="text-xs font-normal text-muji-muted">10:35 ➔ 16:05</span></p>
+                    <p class="text-xs text-muji-sage mt-1"><i class="fa-solid fa-circle-check"></i> 09/09 10:35 Online Check-in</p>
+                </div>
+                <i class="fa-solid fa-plane text-2xl text-muji-border"></i>
+            </div>
+            <div class="bg-muji-card p-4 rounded-2xl border border-muji-border shadow-sm border-l-4 border-l-muji-earth flex justify-between items-center">
+                <div>
+                    <p class="text-xs text-muji-muted uppercase tracking-wider">回程航班 (HK Express)</p>
+                    <p class="text-base font-bold text-muji-text mt-1">UO647 <span class="text-xs font-normal text-muji-muted">19:25 ➔ 23:20</span></p>
+                    <p class="text-xs text-muji-earth mt-1"><i class="fa-solid fa-clock"></i> 最遲 17:25 抵達 NRT T2</p>
+                </div>
+                <i class="fa-solid fa-plane-arrival text-2xl text-muji-border"></i>
+            </div>
+            <div class="bg-muji-card p-4 rounded-2xl border border-muji-border shadow-sm border-l-4 border-l-muji-earth flex justify-between items-center">
+                <div>
+                    <p class="text-xs text-muji-muted uppercase tracking-wider">訂位代碼 & 行李</p>
+                    <p class="text-base font-mono font-bold text-muji-earth mt-1">TDIV7K</p>
+                    <p class="text-xs text-muji-muted mt-1">手提 1 件 + 託運 20KG</p>
+                </div>
+                <a href="https://www.hkexpress.com/zh-HK" target="_blank" class="px-2.5 py-1.5 bg-muji-panel hover:bg-muji-border text-muji-text rounded-lg text-xs transition border border-muji-border">Check-in</a>
+            </div>
+            <div class="bg-muji-card p-4 rounded-2xl border border-muji-border shadow-sm border-l-4 border-l-muji-terracotta flex justify-between items-center">
+                <div>
+                    <p class="text-xs text-muji-muted uppercase tracking-wider">焦點盛事預告</p>
+                    <p class="text-base font-bold text-muji-terracotta mt-1">9/12 調布花火大會</p>
+                    <p class="text-xs text-muji-muted mt-1">萬發花火 18:15 施放</p>
+                </div>
+                <i class="fa-solid fa-fireworks text-2xl text-muji-border"></i>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="flex overflow-x-auto space-x-2 border-b border-muji-border pb-3 custom-scrollbar">
+            <button onclick="switchTab('hotel')" id="tab-hotel" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-sage text-white font-semibold shadow-sm">
+                <i class="fa-solid fa-hotel"></i><span>機場至酒店交通</span>
+            </button>
+            <button onclick="switchTab('fireworks')" id="tab-fireworks" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-card text-muji-muted hover:bg-muji-panel border border-muji-border">
+                <i class="fa-solid fa-burst"></i><span>花火大會特輯</span>
+            </button>
+            <button onclick="switchTab('shopping')" id="tab-shopping" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-card text-muji-muted hover:bg-muji-panel border border-muji-border">
+                <i class="fa-solid fa-bag-shopping"></i><span>精品與鬆弛熊購物</span>
+            </button>
+            <button onclick="switchTab('apps')" id="tab-apps" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-card text-muji-muted hover:bg-muji-panel border border-muji-border">
+                <i class="fa-solid fa-mobile-screen"></i><span>交通 & 計程車 Apps</span>
+            </button>
+            <button onclick="switchTab('tools')" id="tab-tools" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-card text-muji-muted hover:bg-muji-panel border border-muji-border">
+                <i class="fa-solid fa-calculator"></i><span>匯率與清單小工具</span>
+            </button>
+        </div>
+
+        <!-- TAB 1: HOTEL & AIRPORT TRANSFER (Default) -->
+        <section id="sec-hotel" class="tab-content block space-y-6">
+            <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
+                <h2 class="text-lg font-bold text-muji-text mb-2 flex items-center">
+                    <i class="fa-solid fa-train text-muji-sage mr-2"></i>成田機場 (NRT) 到三大熱門住宿區交通比對
+                </h2>
+                <p class="text-xs text-muji-muted mb-6">三個住宿區域均可乘搭 <strong class="text-muji-sage font-semibold">JR 成田特快 N'EX</strong> 一車直達，無需搬行李換乘。</p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Shibuya -->
+                    <div class="bg-muji-card p-5 rounded-2xl border-2 border-muji-sage relative shadow-sm">
+                        <div class="absolute top-3 right-3 bg-muji-sage text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full">
+                            首選推薦
+                        </div>
+                        <h3 class="text-base font-bold text-muji-text flex items-center">🏨 澀谷區 (Shibuya)</h3>
+                        <p class="text-xs text-muji-muted mt-1 mb-4">時尚精品集中地、交通極為便利</p>
+                        <ul class="space-y-2.5 text-xs text-muji-text mb-6">
+                            <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                <span class="text-muji-muted">交通工具：</span><span>JR 成田特快 N'EX</span>
+                            </li>
+                            <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                <span class="text-muji-muted">預估車程：</span><span class="font-bold text-muji-sage">約 85 分鐘</span>
+                            </li>
+                            <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                <span class="text-muji-muted">轉乘次數：</span><span class="text-muji-sage font-medium">直達（0次）</span>
+                            </li>
+                        </ul>
+                        <div class="p-3 bg-muji-panel rounded-xl text-xs space-y-1.5 mb-4 border border-muji-border">
+                            <p class="font-semibold text-muji-sage">📌 乘車步驟：</p>
+                            <p class="text-muji-muted">1. 成田 Terminal 2/3 站上車<br>2. 直達 JR 澀谷站 (八公口/宮益坂口出站)</p>
+                        </div>
+                        <a href="https://www.google.com/maps/dir/Narita+International+Airport+Terminal+2-3+Station/Shibuya+Station" target="_blank" class="block w-full text-center py-2 bg-muji-sage text-white rounded-xl text-xs font-medium hover:opacity-90 transition shadow-sm">
+                            <i class="fa-solid fa-map-location-dot mr-1"></i>Google Maps 導航路線
+                        </a>
+                    </div>
+
+                    <!-- Shinjuku -->
+                    <div class="bg-muji-card p-5 rounded-2xl border border-muji-border shadow-sm">
+                        <h3 class="text-base font-bold text-muji-text flex items-center">🏨 新宿區 (Shinjuku)</h3>
+                        <p class="text-xs text-muji-muted mt-1 mb-4">百貨旗艦店集中、不夜城購物首選</p>
+                        <ul class="space-y-2.5 text-xs text-muji-text mb-6">
+                            <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                <span class="text-muji-muted">交通工具：</span><span>JR 成田特快 N'EX</span>
+                            </li>
+                            <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                <span class="text-muji-muted">預估車程：</span><span class="font-bold text-muji-earth">約 80 分鐘</span>
+                            </li>
+                            <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                <span class="text-muji-muted">轉乘次數：</span><span class="text-muji-earth font-medium">直達（0次）</span>
+                            </li>
+                        </ul>
+                        <div class="p-3 bg-muji-panel rounded-xl text-xs space-y-1.5 mb-4 border border-muji-border">
+                            <p class="font-semibold text-muji-earth">📌 乘車步驟：</p>
+                            <p class="text-muji-muted">1. 成田 Terminal 2/3 站上車<br>2. 直達 JR 新宿站 (東口/南口出站)</p>
+                        </div>
+                        <a href="https://www.google.com/maps/dir/Narita+International+Airport+Terminal+2-3+Station/Shinjuku+Station" target="_blank" class="block w-full text-center py-2 bg-muji-panel hover:bg-muji-border text-muji-text rounded-xl text-xs font-medium transition border border-muji-border">
+                            <i class="fa-solid fa-map-location-dot mr-1"></i>Google Maps 導航路線
+                        </a>
+                    </div>
+
+                    <!-- Yokohama -->
+                    <div class="bg-muji-card p-5 rounded-2xl border border-muji-border shadow-sm">
+                        <h3 class="text-base font-bold text-muji-text flex items-center">🏨 橫濱區 (Yokohama)</h3>
+                        <p class="text-xs text-muji-muted mt-1 mb-4">港灣夜景放鬆、遠離鬧區嘈雜</p>
+                        <ul class="space-y-2.5 text-xs text-muji-text mb-6">
+                            <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                <span class="text-muji-muted">交通工具：</span><span>JR 成田特快 N'EX</span>
+                            </li>
+                            <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                <span class="text-muji-muted">預估車程：</span><span class="font-bold text-muji-earth">約 90 分鐘</span>
+                            </li>
+                            <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                <span class="text-muji-muted">轉乘次數：</span><span class="text-muji-earth font-medium">直達（0次）</span>
+                            </li>
+                        </ul>
+                        <div class="p-3 bg-muji-panel rounded-xl text-xs space-y-1.5 mb-4 border border-muji-border">
+                            <p class="font-semibold text-muji-earth">📌 乘車步驟：</p>
+                            <p class="text-muji-muted">1. 成田 Terminal 2/3 站上車<br>2. 直達 JR 橫濱站 (西口/東口出站)</p>
+                        </div>
+                        <a href="https://www.google.com/maps/dir/Narita+International+Airport+Terminal+2-3+Station/Yokohama+Station" target="_blank" class="block w-full text-center py-2 bg-muji-panel hover:bg-muji-border text-muji-text rounded-xl text-xs font-medium transition border border-muji-border">
+                            <i class="fa-solid fa-map-location-dot mr-1"></i>Google Maps 導航路線
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: FIREWORKS SPECIAL -->
+        <section id="sec-fireworks" class="tab-content hidden space-y-6">
+            <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="p-3 bg-muji-terracotta/10 text-muji-terracotta rounded-xl border border-muji-terracotta/20">
+                        <i class="fa-solid fa-burst text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-muji-text">第 41 回 調布花火大會 2026 特輯</h2>
+                        <p class="text-xs text-muji-terracotta font-medium">日期：2026/09/12 (星期六) • 施放時間：18:15 – 19:15</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div class="space-y-4">
+                        <div class="bg-muji-panel p-4 rounded-xl border border-muji-border">
+                            <h3 class="text-xs font-bold text-muji-text mb-2 flex items-center"><i class="fa-solid fa-star text-muji-earth mr-1.5"></i>花火節亮點</h3>
+                            <p class="text-xs text-muji-muted leading-relaxed">
+                                東京 9 月份規模最大、歷史悠久的花火大會！沿多摩川河畔施放約 <strong class="text-muji-terracotta">10,000 發花火</strong>，配合音樂打造經典的日式花火夜空景象。
+                            </p>
+                        </div>
+                        <div class="bg-muji-panel p-4 rounded-xl border border-muji-border">
+                            <h3 class="text-xs font-bold text-muji-text mb-2 flex items-center"><i class="fa-solid fa-route text-muji-sage mr-1.5"></i>詳細交通指引</h3>
+                            <ol class="text-xs text-muji-muted space-y-1.5 list-decimal list-inside">
+                                <li>從 <strong>新宿站</strong> 搭乘「京王線 (Keio Line)」特急列車至 <strong>調布站 (Chofu Station)</strong>（車程約 18 分鐘）。</li>
+                                <li>出站後跟隨人潮指標步行約 15–20 分鐘抵達多摩川河川敷會場。</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="bg-muji-panel p-4 rounded-xl border border-muji-border flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xs font-bold text-muji-text mb-2 flex items-center"><i class="fa-solid fa-triangle-exclamation text-muji-terracotta mr-1.5"></i>智能防坑與避人群提醒</h3>
+                            <ul class="text-xs text-muji-muted space-y-1.5 list-disc list-inside">
+                                <li><strong class="text-muji-text">回程進站管制：</strong> 散場時車站極度擁擠，請務必在去程時先行給 Suica 卡加值。</li>
+                                <li><strong class="text-muji-text">提早佔位：</strong> 建議下午 16:30 前抵達河床會場，可自備便攜野餐墊。</li>
+                                <li><strong class="text-muji-text">流動廁所：</strong> 會場廁所排隊時間較長，建議進會場前在車站或超商完成。</li>
+                            </ul>
+                        </div>
+                        <a href="https://www.google.com/maps/search/Tamagawa+Riverbed+Chofu" target="_blank" class="mt-4 block w-full text-center py-2.5 bg-muji-terracotta text-white font-medium rounded-xl text-xs hover:opacity-90 transition shadow-sm">
+                            <i class="fa-solid fa-location-dot mr-1"></i>Google Maps 定位多摩川會場
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: SHOPPING -->
+        <section id="sec-shopping" class="tab-content hidden space-y-6">
+            <!-- Rilakkuma Section -->
+            <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
+                <h2 class="text-lg font-bold text-muji-text mb-2 flex items-center">
+                    <i class="fa-solid fa-heart text-muji-terracotta mr-2"></i>鬆弛熊專門店 (Rilakkuma Store) 4 大必訪據點
+                </h2>
+                <p class="text-xs text-muji-muted mb-6">包含東京車站限定、晴空塔限定與池袋旗艦店，極具收藏價值。</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-earth transition">
+                        <h3 class="font-bold text-xs text-muji-text">1. 東京站一番街店</h3>
+                        <p class="text-xs text-muji-muted mt-1 mb-3">獨家站長造型鬆弛熊，周邊種類最齊全。</p>
+                        <a href="https://www.google.com/maps/search/Rilakkuma+Store+Tokyo+Station" target="_blank" class="text-xs text-muji-earth hover:underline inline-flex items-center font-medium">
+                            <i class="fa-solid fa-map-pin mr-1"></i>開啟地圖
+                        </a>
+                    </div>
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-earth transition">
+                        <h3 class="font-bold text-xs text-muji-text">2. 原宿 Kiddy Land 店</h3>
+                        <p class="text-xs text-muji-muted mt-1 mb-3">位於 4 樓，完美結合表參道精品購物行程。</p>
+                        <a href="https://www.google.com/maps/search/Kiddy+Land+Harajuku" target="_blank" class="text-xs text-muji-earth hover:underline inline-flex items-center font-medium">
+                            <i class="fa-solid fa-map-pin mr-1"></i>開啟地圖
+                        </a>
+                    </div>
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-earth transition">
+                        <h3 class="font-bold text-xs text-muji-text">3. 晴空塔 Solamachi 店</h3>
+                        <p class="text-xs text-muji-muted mt-1 mb-3">位於 3 樓，獨家晴空塔高塔聯名周邊。</p>
+                        <a href="https://www.google.com/maps/search/Rilakkuma+Store+Tokyo+Skytree" target="_blank" class="text-xs text-muji-earth hover:underline inline-flex items-center font-medium">
+                            <i class="fa-solid fa-map-pin mr-1"></i>開啟地圖
+                        </a>
+                    </div>
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-earth transition">
+                        <h3 class="font-bold text-xs text-muji-text">4. 池袋 Sunshine City 店</h3>
+                        <p class="text-xs text-muji-muted mt-1 mb-3">旗艦店等級，店面寬敞且適合最後採購。</p>
+                        <a href="https://www.google.com/maps/search/Rilakkuma+Store+Ikebukuro" target="_blank" class="text-xs text-muji-earth hover:underline inline-flex items-center font-medium">
+                            <i class="fa-solid fa-map-pin mr-1"></i>開啟地圖
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Luxury Brands Section -->
+            <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
+                <h2 class="text-lg font-bold text-muji-text mb-2 flex items-center">
+                    <i class="fa-solid fa-gem text-muji-earth mr-2"></i>名店與精品奢華購物地圖
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border">
+                        <h3 class="font-bold text-xs text-muji-text mb-1.5">🛍️ 表參道 (Omotesando)</h3>
+                        <p class="text-xs text-muji-muted leading-relaxed mb-3">Chanel, Louis Vuitton, Celine, Dior 旗艦店密集區，建築設計極具簡約美感。</p>
+                        <a href="https://www.google.com/maps/search/Omotesando" target="_blank" class="text-xs text-muji-earth hover:underline font-medium"><i class="fa-solid fa-location-arrow mr-1"></i>導航表參道</a>
+                    </div>
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border">
+                        <h3 class="font-bold text-xs text-muji-text mb-1.5">💎 銀座 (Ginza)</h3>
+                        <p class="text-xs text-muji-muted leading-relaxed mb-3">GINZA SIX、三越百貨。記得憑護照申辦外國人 5% 優惠 Guest Card。</p>
+                        <a href="https://www.google.com/maps/search/Ginza+Tokyo" target="_blank" class="text-xs text-muji-earth hover:underline font-medium"><i class="fa-solid fa-location-arrow mr-1"></i>導航銀座</a>
+                    </div>
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border">
+                        <h3 class="font-bold text-xs text-muji-text mb-1.5">🏢 新宿伊勢丹 (ISETAN)</h3>
+                        <p class="text-xs text-muji-muted leading-relaxed mb-3">全日本女裝與高奢品牌進駐最齊全的頂級百貨公司。</p>
+                        <a href="https://www.google.com/maps/search/Isetan+Shinjuku" target="_blank" class="text-xs text-muji-earth hover:underline font-medium"><i class="fa-solid fa-location-arrow mr-1"></i>導航新宿伊勢丹</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: APPS & TAXI -->
+        <section id="sec-apps" class="tab-content hidden space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Taxi Apps -->
+                <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
+                    <h2 class="text-base font-bold text-muji-text mb-4 flex items-center">
+                        <i class="fa-solid fa-taxi text-muji-earth mr-2"></i>日本計程車 / 的士叫車 Apps
+                    </h2>
+                    <div class="space-y-3">
+                        <div class="p-3.5 bg-muji-panel rounded-xl border border-muji-border">
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="font-bold text-xs text-muji-text">GO (ゴー)</h3>
+                                <span class="bg-muji-earth/15 text-muji-earth text-[10px] px-2 py-0.5 rounded font-medium">日本市佔第一</span>
+                            </div>
+                            <p class="text-xs text-muji-muted">支援綁定信用卡自動扣款，可指定 JPN TAXI 寬敞車型（適合戰利品與大行李箱）。</p>
+                        </div>
+                        <div class="p-3.5 bg-muji-panel rounded-xl border border-muji-border">
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="font-bold text-xs text-muji-text">S.RIDE</h3>
+                                <span class="bg-muji-sage/15 text-muji-sage text-[10px] px-2 py-0.5 rounded font-medium">東京首都圈極速</span>
+                            </div>
+                            <p class="text-xs text-muji-muted">主打滑一下極速叫車，整合東京多家大型車隊，繁華區派車極快。</p>
+                        </div>
+                        <div class="p-3.5 bg-muji-panel rounded-xl border border-muji-border">
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="font-bold text-xs text-muji-text">Uber Japan</h3>
+                                <span class="bg-muji-border text-muji-text text-[10px] px-2 py-0.5 rounded font-medium">免下新 App</span>
+                            </div>
+                            <p class="text-xs text-muji-muted">直接使用香港原有 Uber 帳號，全繁體中文介面，車資路線預估直覺。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transit Apps -->
+                <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
+                    <h2 class="text-base font-bold text-muji-text mb-4 flex items-center">
+                        <i class="fa-solid fa-train-subway text-muji-sage mr-2"></i>大眾交通 & 鐵路 Apps
+                    </h2>
+                    <div class="space-y-3">
+                        <div class="p-3.5 bg-muji-panel rounded-xl border border-muji-border">
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="font-bold text-xs text-muji-text">Yahoo! 乘換案內</h3>
+                                <span class="bg-muji-sage/15 text-muji-sage text-[10px] px-2 py-0.5 rounded font-medium">精準度最高</span>
+                            </div>
+                            <p class="text-xs text-muji-muted">顯示精確乘車月台（幾號番線）與換乘最佳車廂，防迷路神器。</p>
+                        </div>
+                        <div class="p-3.5 bg-muji-panel rounded-xl border border-muji-border">
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="font-bold text-xs text-muji-text">Japan Transit Planner (Jorudan)</h3>
+                                <span class="bg-muji-earth/15 text-muji-earth text-[10px] px-2 py-0.5 rounded font-medium">全繁體中文</span>
+                            </div>
+                            <p class="text-xs text-muji-muted">支援中文輸入站名，清晰標示車資、轉乘次數與所需時間。</p>
+                        </div>
+                        <div class="p-3.5 bg-muji-panel rounded-xl border border-muji-border">
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="font-bold text-xs text-muji-text">Apple Wallet Suica / PASMO</h3>
+                                <span class="bg-muji-sage/15 text-muji-sage text-[10px] px-2 py-0.5 rounded font-medium">嗶手機即進站</span>
+                            </div>
+                            <p class="text-xs text-muji-muted">直接於 iPhone Wallet 新增卡片，使用香港信用卡隨時隨地加值。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: TOOLS & CHECKLIST -->
+        <section id="sec-tools" class="tab-content hidden space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Currency Converter -->
+                <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
+                    <h2 class="text-base font-bold text-muji-text mb-4 flex items-center">
+                        <i class="fa-solid fa-calculator text-muji-sage mr-2"></i>日圓 (JPY) 換算 港幣 (HKD)
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs text-muji-muted mb-1">輸入日圓金額 (¥ JPY)</label>
+                            <input type="number" id="jpy-input" value="10000" oninput="convertCurrency()" class="w-full bg-muji-panel border border-muji-border rounded-xl px-4 py-2.5 text-muji-text text-lg font-mono focus:outline-none focus:border-muji-sage">
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-muji-muted px-1">
+                            <span>預設匯率估計：1 JPY ≈ <span id="rate-display">0.052</span> HKD</span>
+                            <button onclick="changeRate()" class="text-muji-sage hover:underline font-medium">調整匯率</button>
+                        </div>
+                        <div class="p-4 bg-muji-panel border border-muji-border rounded-xl">
+                            <p class="text-xs text-muji-muted uppercase tracking-wider">折合港幣金額</p>
+                            <p class="text-2xl font-bold font-mono text-muji-sage mt-1">HK$ <span id="hkd-result">520.00</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Packing & Checklist -->
+                <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
+                    <h2 class="text-base font-bold text-muji-text mb-4 flex items-center">
+                        <i class="fa-solid fa-list-check text-muji-earth mr-2"></i>行前 & 行程動態清單
+                    </h2>
+                    <div class="space-y-2.5" id="checklist">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Interactive JS Script -->
+    <script>
+        // Packing Checklist Items
+        const checklistItems = [
+            { id: 1, text: "09/09 10:35 辦理 HK Express 網上 Check-in (TDIV7K)", checked: false },
+            { id: 2, text: "iPhone Wallet 設定 Suica 卡並預加值 5,000 日圓", checked: true },
+            { id: 3, text: "下載並註冊 GO 計程車 App（綁定信用卡）", checked: true },
+            { id: 4, text: "護照（有效期限 6 個月以上）與託運 20KG 確認", checked: false },
+            { id: 5, text: "準備好日圓現金與外國人購物 Guest Card 申請需求", checked: false }
+        ];
+
+        let exchangeRate = 0.052;
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = "tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-card text-muji-muted hover:bg-muji-panel border border-muji-border";
+            });
+
+            document.getElementById(`sec-${tabId}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            activeBtn.className = "tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-sage text-white font-semibold shadow-sm";
+        }
+
+        // Currency Converter Logic
+        function convertCurrency() {
+            const jpy = parseFloat(document.getElementById('jpy-input').value) || 0;
+            const hkd = (jpy * exchangeRate).toFixed(2);
+            document.getElementById('hkd-result').innerText = Number(hkd).toLocaleString('en-US', { minimumFractionDigits: 2 });
+        }
+
+        function changeRate() {
+            const newRate = prompt("請輸入新的 JPY 兌 HKD 匯率：", exchangeRate);
+            if (newRate && !isNaN(parseFloat(newRate))) {
+                exchangeRate = parseFloat(newRate);
+                document.getElementById('rate-display').innerText = exchangeRate;
+                convertCurrency();
+            }
+        }
+
+        // Checklist Logic
+        function renderChecklist() {
+            const container = document.getElementById('checklist');
+            container.innerHTML = checklistItems.map((item, index) => `
+                <label class="flex items-center space-x-3 p-3 bg-muji-panel rounded-xl border border-muji-border cursor-pointer hover:bg-muji-border/40 transition">
+                    <input type="checkbox" ${item.checked ? 'checked' : ''} onchange="toggleCheck(${index})" class="w-4 h-4 rounded border-muji-border text-muji-sage focus:ring-muji-sage bg-white">
+                    <span class="text-xs ${item.checked ? 'line-through text-muji-muted' : 'text-muji-text'}">${item.text}</span>
+                </label>
+            `).join('');
+        }
+
+        function toggleCheck(index) {
+            checklistItems[index].checked = !checklistItems[index].checked;
+            renderChecklist();
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const targetDate = new Date('2026-09-11T10:35:00+08:00');
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('countdown').innerText = "東京之旅啟航中！";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const mins = Math.floor((diff / 1000 / 60) % 60);
+
+            document.getElementById('countdown').innerText = `倒數 ${days} 天 ${hours} 小時 ${mins} 分`;
+        }
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', () => {
+            renderChecklist();
+            convertCurrency();
+            updateCountdown();
+            setInterval(updateCountdown, 60000);
+        });
+    </script>
+</body>
+</html>
