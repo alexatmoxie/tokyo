@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>東京極簡漫旅 2026 | Alex's Travel Hub</title>
-    <link rel="manifest" href="manifest.json">
+<link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Tokyo">
@@ -63,7 +63,7 @@
 <body class="min-h-screen flex flex-col custom-scrollbar pb-16 md:pb-0">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 muji-glass border-b border-muji-border">
+    <header class="sticky top-0 z-40 muji-glass border-b border-muji-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo & Title -->
@@ -73,7 +73,7 @@
                     </div>
                     <div>
                         <h1 class="text-base font-bold text-muji-text tracking-wide">TOKYO 2026</h1>
-                        <p class="text-xs text-muji-sage font-mono">09/11 – 09/17 • Muji Style Guide</p>
+                        <p class="text-xs text-muji-sage font-mono">09/11 – 09/17</p>
                     </div>
                 </div>
 
@@ -102,7 +102,7 @@
     <!-- Main Content Container -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
 
-        <!-- ☀️ Weather Forecast Widget (Directly Under Tokyo 2026) -->
+        <!-- ☀️ Weather Forecast Widget -->
         <div class="bg-muji-card p-5 sm:p-6 rounded-2xl border border-muji-border shadow-sm">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-muji-border gap-2">
                 <div class="flex items-center space-x-2.5">
@@ -127,7 +127,6 @@
             <div class="overflow-x-auto custom-scrollbar mt-4">
                 <table class="w-full text-center border-collapse min-w-[620px]">
                     <thead>
-                        <!-- 日期欄 -->
                         <tr class="border-b border-muji-border/70 text-xs">
                             <th class="py-2.5 px-3 font-semibold text-muji-muted bg-muji-panel/50 rounded-l-xl w-16">日</th>
                             <th class="py-2.5 px-3 font-bold text-muji-text">
@@ -161,10 +160,8 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-muji-border/40 text-xs">
-                        <!-- 天氣圖標欄 -->
                         <tr>
                             <td class="py-3 px-3 font-semibold text-muji-muted bg-muji-panel/50">天気</td>
-                            <!-- 11 -->
                             <td class="py-3 px-3">
                                 <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-base shadow-sm relative">
                                     <i class="fa-solid fa-cloud text-xs absolute top-2 left-2"></i>
@@ -173,13 +170,11 @@
                                     </div>
                                 </div>
                             </td>
-                            <!-- 12 -->
                             <td class="py-3 px-3">
                                 <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-lg shadow-sm">
                                     <i class="fa-solid fa-cloud"></i>
                                 </div>
                             </td>
-                            <!-- 13 -->
                             <td class="py-3 px-3">
                                 <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-base shadow-sm relative">
                                     <i class="fa-solid fa-cloud text-xs absolute top-2 left-2"></i>
@@ -188,7 +183,6 @@
                                     </div>
                                 </div>
                             </td>
-                            <!-- 14 -->
                             <td class="py-3 px-3">
                                 <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-base shadow-sm relative">
                                     <i class="fa-solid fa-cloud text-xs absolute top-2 left-2"></i>
@@ -197,7 +191,6 @@
                                     </div>
                                 </div>
                             </td>
-                            <!-- 15 -->
                             <td class="py-3 px-3">
                                 <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-base shadow-sm relative">
                                     <i class="fa-solid fa-cloud text-xs absolute top-2 left-2"></i>
@@ -206,7 +199,6 @@
                                     </div>
                                 </div>
                             </td>
-                            <!-- 16 -->
                             <td class="py-3 px-3">
                                 <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-base shadow-sm relative">
                                     <i class="fa-solid fa-cloud text-xs absolute top-2 left-2"></i>
@@ -215,7 +207,6 @@
                                     </div>
                                 </div>
                             </td>
-                            <!-- 17 -->
                             <td class="py-3 px-3">
                                 <div class="inline-flex items-center justify-center w-12 h-10 rounded-lg bg-gray-500 text-white text-lg shadow-sm">
                                     <i class="fa-solid fa-cloud"></i>
@@ -223,7 +214,6 @@
                             </td>
                         </tr>
 
-                        <!-- 最高氣溫欄 -->
                         <tr>
                             <td class="py-2.5 px-3 font-semibold text-muji-muted bg-muji-panel/50">最高</td>
                             <td class="py-2.5 px-3 font-bold text-orange-600 font-mono text-sm">26<span class="text-xs font-normal">℃</span></td>
@@ -235,7 +225,6 @@
                             <td class="py-2.5 px-3 font-bold text-orange-600 font-mono text-sm">29<span class="text-xs font-normal">℃</span></td>
                         </tr>
 
-                        <!-- 最低氣溫欄 -->
                         <tr>
                             <td class="py-2.5 px-3 font-semibold text-muji-muted bg-muji-panel/50">最低</td>
                             <td class="py-2.5 px-3 font-bold text-blue-600 font-mono text-sm">20<span class="text-xs font-normal">℃</span></td>
@@ -247,7 +236,6 @@
                             <td class="py-2.5 px-3 font-bold text-blue-600 font-mono text-sm">23<span class="text-xs font-normal">℃</span></td>
                         </tr>
 
-                        <!-- 降水機率欄 -->
                         <tr>
                             <td class="py-2.5 px-3 font-semibold text-muji-muted bg-muji-panel/50 rounded-bl-xl">降水</td>
                             <td class="py-2.5 px-3 font-bold text-muji-text font-mono text-xs">60<span class="text-[10px] font-normal text-muji-muted">%</span></td>
@@ -262,11 +250,11 @@
                 </table>
             </div>
 
-            <!-- 智慧天氣小提醒 -->
+            <!-- 天氣提示 -->
             <div class="mt-4 p-3 bg-muji-panel rounded-xl border border-muji-border flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-muji-muted gap-2">
                 <div class="flex items-center space-x-2">
                     <i class="fa-solid fa-circle-info text-muji-sage"></i>
-                    <span><strong>導遊貼士：</strong>9/11 (抵達日) 與 9/15-16 降水機率達 60%，建議隨身攜帶輕便折疊傘；9/12 調布花火日多雲 (40%降雨)，夜間氣溫約 21°C，體感涼爽建議備薄外套。</span>
+                    <span><strong>行程提醒：</strong>9/12 調布花火多雲微涼 (21°C)；9/13 熱海花火當天晴時多雲 (22°C - 30°C)，海邊夜間體感舒適，非常適合觀賞海上煙火。</span>
                 </div>
             </div>
         </div>
@@ -299,15 +287,15 @@
             </div>
             <div class="bg-muji-card p-4 rounded-2xl border border-muji-border shadow-sm border-l-4 border-l-muji-terracotta flex justify-between items-center">
                 <div>
-                    <p class="text-xs text-muji-muted uppercase tracking-wider">焦點盛事預告</p>
-                    <p class="text-base font-bold text-muji-terracotta mt-1">9/12 調布花火大會</p>
-                    <p class="text-xs text-muji-muted mt-1">萬發花火 18:15 施放</p>
+                    <p class="text-xs text-muji-muted uppercase tracking-wider">花火大會雙重盛宴</p>
+                    <p class="text-sm font-bold text-muji-terracotta mt-1">9/12 調布 • 9/13 熱海</p>
+                    <p class="text-xs text-muji-muted mt-1">萬發花火 & 海上聲光</p>
                 </div>
                 <i class="fa-solid fa-fireworks text-2xl text-muji-border"></i>
             </div>
         </div>
 
-        <!-- Navigation Tabs -->
+        <!-- Main Navigation Tabs -->
         <div class="flex overflow-x-auto space-x-2 border-b border-muji-border pb-3 custom-scrollbar">
             <button onclick="switchTab('hotel')" id="tab-hotel" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-sage text-white font-semibold shadow-sm">
                 <i class="fa-solid fa-hotel"></i><span>機場至酒店交通</span>
@@ -316,7 +304,7 @@
                 <i class="fa-solid fa-burst"></i><span>花火大會特輯</span>
             </button>
             <button onclick="switchTab('shopping')" id="tab-shopping" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-card text-muji-muted hover:bg-muji-panel border border-muji-border">
-                <i class="fa-solid fa-bag-shopping"></i><span>精品與鬆弛熊購物</span>
+                <i class="fa-solid fa-bag-shopping"></i><span>名店及鬆弛熊專門店</span>
             </button>
             <button onclick="switchTab('apps')" id="tab-apps" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-card text-muji-muted hover:bg-muji-panel border border-muji-border">
                 <i class="fa-solid fa-mobile-screen"></i><span>交通 & 計程車 Apps</span>
@@ -326,7 +314,7 @@
             </button>
         </div>
 
-        <!-- TAB 1: HOTEL & AIRPORT TRANSFER (Default) -->
+        <!-- TAB 1: HOTEL & AIRPORT TRANSFER -->
         <section id="sec-hotel" class="tab-content block space-y-6">
             <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
                 <h2 class="text-lg font-bold text-muji-text mb-2 flex items-center">
@@ -415,15 +403,36 @@
 
         <!-- TAB 2: FIREWORKS SPECIAL -->
         <section id="sec-fireworks" class="tab-content hidden space-y-6">
-            <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
-                <div class="flex items-center space-x-3 mb-4">
-                    <div class="p-3 bg-muji-terracotta/10 text-muji-terracotta rounded-xl border border-muji-terracotta/20">
-                        <i class="fa-solid fa-burst text-xl"></i>
+            <!-- Fireworks Sub-Tabs Selector -->
+            <div class="flex space-x-2 border-b border-muji-border pb-2">
+                <button onclick="switchFireworksSubTab('chofu')" id="fw-subtab-chofu" class="fw-sub-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-muji-terracotta text-white shadow-sm flex items-center space-x-1.5">
+                    <i class="fa-solid fa-fireworks"></i>
+                    <span>9/12 (六) 第 41 回 調布花火大會</span>
+                </button>
+                <button onclick="switchFireworksSubTab('atami')" id="fw-subtab-atami" class="fw-sub-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition bg-muji-card text-muji-muted hover:bg-muji-panel border border-muji-border flex items-center space-x-1.5">
+                    <i class="fa-solid fa-water"></i>
+                    <span>9/13 (日) 熱海海上花火大會</span>
+                </button>
+            </div>
+
+            <!-- SUB-PANEL 1: 調布花火大會 -->
+            <div id="fw-panel-chofu" class="fw-panel block bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-muji-border gap-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-3 bg-muji-terracotta/10 text-muji-terracotta rounded-xl border border-muji-terracotta/20">
+                            <i class="fa-solid fa-burst text-xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-bold text-muji-text">第 41 回 調布花火大會 2026 特輯</h2>
+                            <p class="text-xs text-muji-terracotta font-medium">日期：2026/09/12 (星期六) • 施放時間：18:15 – 19:15</p>
+                        </div>
                     </div>
-                    <div>
-                        <h2 class="text-lg font-bold text-muji-text">第 41 回 調布花火大會 2026 特輯</h2>
-                        <p class="text-xs text-muji-terracotta font-medium">日期：2026/09/12 (星期六) • 施放時間：18:15 – 19:15</p>
-                    </div>
+                    <!-- 調布花火大會官方原站 -->
+                    <a href="https://hanabi.csa.gr.jp/" target="_blank" class="inline-flex items-center space-x-2 px-3.5 py-2 bg-muji-terracotta hover:opacity-90 text-white rounded-xl text-xs font-semibold transition shadow-sm w-fit">
+                        <i class="fa-solid fa-globe text-sm"></i>
+                        <span>調布花火大會官方網站</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
@@ -445,11 +454,29 @@
 
                     <div class="bg-muji-panel p-4 rounded-xl border border-muji-border flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xs font-bold text-muji-text mb-2 flex items-center"><i class="fa-solid fa-triangle-exclamation text-muji-terracotta mr-1.5"></i>智能防坑與避人群提醒</h3>
-                            <ul class="text-xs text-muji-muted space-y-1.5 list-disc list-inside">
-                                <li><strong class="text-muji-text">回程進站管制：</strong> 散場時車站極度擁擠，請務必在去程時先行給 Suica 卡加值。</li>
-                                <li><strong class="text-muji-text">提早佔位：</strong> 建議下午 16:30 前抵達河床會場，可自備便攜野餐墊。</li>
-                                <li><strong class="text-muji-text">流動廁所：</strong> 會場廁所排隊時間較長，建議進會場前在車站或超商完成。</li>
+                            <h3 class="text-xs font-bold text-muji-text mb-2 flex items-center"><i class="fa-solid fa-circle-info text-muji-terracotta mr-1.5"></i>官方資訊與智能避人群提醒</h3>
+                            <ul class="text-xs text-muji-muted space-y-2.5 mb-4">
+                                <li class="flex items-start space-x-2 bg-muji-card p-2 rounded-lg border border-muji-border">
+                                    <i class="fa-solid fa-globe text-xs text-muji-terracotta mt-0.5"></i>
+                                    <div>
+                                        <span class="font-bold text-muji-text">調布花火大會官方網站：</span>
+                                        <a href="https://hanabi.csa.gr.jp/" target="_blank" class="text-muji-terracotta hover:underline font-semibold block sm:inline mt-0.5 sm:mt-0">
+                                            hanabi.csa.gr.jp (日文原站) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-muji-terracotta mt-1.5 shrink-0"></span>
+                                    <span><strong class="text-muji-text">回程進站管制：</strong> 散場時調布站極度擁擠，請務必在去程時先行給 Suica 卡加值。</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-muji-terracotta mt-1.5 shrink-0"></span>
+                                    <span><strong class="text-muji-text">提早佔位：</strong> 建議下午 16:30 前抵達河床會場，可自備便攜野餐墊。</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-muji-terracotta mt-1.5 shrink-0"></span>
+                                    <span><strong class="text-muji-text">流動廁所：</strong> 會場廁所排隊時間較長，建議進會場前在車站或超商完成。</span>
+                                </li>
                             </ul>
                         </div>
                         <a href="https://www.google.com/maps/search/Tamagawa+Riverbed+Chofu" target="_blank" class="mt-4 block w-full text-center py-2.5 bg-muji-terracotta text-white font-medium rounded-xl text-xs hover:opacity-90 transition shadow-sm">
@@ -458,41 +485,143 @@
                     </div>
                 </div>
             </div>
+
+            <!-- SUB-PANEL 2: 熱海海上花火大會 -->
+            <div id="fw-panel-atami" class="fw-panel hidden bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-muji-border gap-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-3 bg-muji-sage/15 text-muji-sage rounded-xl border border-muji-sage/20">
+                            <i class="fa-solid fa-water text-xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-bold text-muji-text">熱海海上花火大會 2026 特輯</h2>
+                            <p class="text-xs text-muji-sage font-medium">日期：2026/09/13 (星期日) • 施放時間：20:20 – 20:40（約 20 分鐘）• 地點：靜岡縣熱海灣</p>
+                        </div>
+                    </div>
+                    <!-- 熱海官網按鈕 -->
+                    <a href="https://www.ataminews.gr.jp/event/8/" target="_blank" class="inline-flex items-center space-x-2 px-3.5 py-2 bg-muji-earth hover:opacity-90 text-white rounded-xl text-xs font-semibold transition shadow-sm w-fit">
+                        <i class="fa-solid fa-globe text-sm"></i>
+                        <span>熱海花火大會官方網站</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div class="space-y-4">
+                        <div class="bg-muji-panel p-4 rounded-xl border border-muji-border">
+                            <h3 class="text-xs font-bold text-muji-text mb-2 flex items-center"><i class="fa-solid fa-star text-muji-earth mr-1.5"></i>花火節亮點與天然盆地音效</h3>
+                            <p class="text-xs text-muji-muted leading-relaxed">
+                                日本歷史悠久的海上花火代表！三面環山的海灣地形宛如天然體育場，花火爆炸聲在山谷與海面迴盪，震撼感極強。壓軸施放的「大空中尼加拉瓜大瀑布」銀白煙火倒映整片海灣，極致浪漫。
+                            </p>
+                        </div>
+                        <div class="bg-muji-panel p-4 rounded-xl border border-muji-border">
+                            <h3 class="text-xs font-bold text-muji-text mb-2 flex items-center"><i class="fa-solid fa-route text-muji-sage mr-1.5"></i>詳細交通路線指南</h3>
+                            <ol class="text-xs text-muji-muted space-y-2 list-decimal list-inside">
+                                <li>
+                                    <strong class="text-muji-text">東海道新幹線：</strong> 從 <strong>東京站</strong> 搭乘東海道新幹線「回聲號 (Kodama)」直達 <strong>熱海站</strong>，車程約 <strong class="text-muji-sage">45 分鐘</strong>。
+                                </li>
+                                <li>
+                                    <strong class="text-muji-text">步行至觀賞區：</strong> 抵達熱海站後，出站沿平和通商店街向下坡步行約 <strong class="text-muji-sage">15 分鐘</strong>，即可抵達「熱海陽光海灘 (Sun Beach)」沙灘觀賞區。
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="bg-muji-panel p-4 rounded-xl border border-muji-border flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xs font-bold text-muji-text mb-2 flex items-center"><i class="fa-solid fa-circle-info text-muji-earth mr-1.5"></i>官方資訊與觀賞指南</h3>
+                            <ul class="text-xs text-muji-muted space-y-2.5 mb-4">
+                                <li class="flex items-start space-x-2 bg-muji-card p-2 rounded-lg border border-muji-border">
+                                    <i class="fa-solid fa-globe text-xs text-muji-earth mt-0.5"></i>
+                                    <div>
+                                        <span class="font-bold text-muji-text">熱海花火大會官方網站：</span>
+                                        <a href="https://www.ataminews.gr.jp/event/8/" target="_blank" class="text-muji-earth hover:underline font-semibold block sm:inline mt-0.5 sm:mt-0">
+                                            ataminews.gr.jp (日文原站) <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-muji-earth"></i>
+                                    <span>日本觀光局專頁：</span>
+                                    <a href="https://www.gltjp.com/zh-hant/directory/item/18190/" target="_blank" class="text-muji-earth hover:underline font-semibold">GLTJP 熱海花火官方介紹</a>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-muji-earth"></i>
+                                    <span>熱海市觀光協會與攻略：</span>
+                                    <a href="https://flyday.hk/atamide-hanabi/" target="_blank" class="text-muji-earth hover:underline font-semibold">Flyday 熱海花火全攻略</a>
+                                </li>
+                                <li class="text-[11px] text-muji-muted mt-2 border-t border-muji-border pt-2">
+                                    💡 <strong>小提醒：</strong> 花火 20:40 結束，可搭乘 21:00 左右的新幹線 Kodama 返回東京站，建議當天提早劃好指定席座位。
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="https://www.google.com/maps/search/Atami+Sun+Beach" target="_blank" class="mt-4 block w-full text-center py-2.5 bg-muji-sage text-white font-medium rounded-xl text-xs hover:opacity-90 transition shadow-sm">
+                            <i class="fa-solid fa-location-dot mr-1"></i>Google Maps 定位熱海陽光海灘會場
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- TAB 3: SHOPPING -->
+        <!-- TAB 3: 名店及鬆弛熊專門店 (SHOPPING) -->
         <section id="sec-shopping" class="tab-content hidden space-y-6">
-            <!-- Rilakkuma Section -->
+            <!-- 🧸 Rilakkuma Section -->
             <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
-                <h2 class="text-lg font-bold text-muji-text mb-2 flex items-center">
-                    <i class="fa-solid fa-heart text-muji-terracotta mr-2"></i>鬆弛熊專門店 (Rilakkuma Store) 4 大必訪據點
-                </h2>
-                <p class="text-xs text-muji-muted mb-6">包含東京車站限定、晴空塔限定與池袋旗艦店，極具收藏價值。</p>
+                <div class="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-muji-border mb-6">
+                    <div class="flex items-center space-x-3.5">
+                        <!-- ✨ 更新為官方 Logo 圖片，移除黑底，換成乾淨的白底/淺灰底框 -->
+                        <div class="w-12 h-12 rounded-2xl bg-white border border-muji-border p-1.5 flex items-center justify-center shadow-sm overflow-hidden shrink-0">
+                            <img src="https://www.babyonline.com.hk/image/cache/data/category/rilakkuma-logo-340x340.png" alt="Rilakkuma 鬆弛熊 Logo" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <h2 class="text-base sm:text-lg font-bold text-muji-text">鬆弛熊專門店 (Rilakkuma Store) 4 大必訪據點</h2>
+                                <span class="bg-amber-100 text-amber-800 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-amber-200">Official Shop</span>
+                            </div>
+                            <p class="text-xs text-muji-muted mt-0.5">包含東京車站限定、晴空塔限定與池袋旗艦店，極具收藏價值。</p>
+                        </div>
+                    </div>
+                    <div class="text-[11px] text-muji-muted font-mono bg-muji-panel px-3 py-1 rounded-lg border border-muji-border">
+                        🧸 リラックマ ストア
+                    </div>
+                </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-earth transition">
-                        <h3 class="font-bold text-xs text-muji-text">1. 東京站一番街店</h3>
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-earth transition relative group">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="font-bold text-xs text-muji-text">1. 東京站一番街店</h3>
+                            <span class="text-[10px] text-amber-700 bg-amber-100/70 px-1.5 py-0.5 rounded">站長限定</span>
+                        </div>
                         <p class="text-xs text-muji-muted mt-1 mb-3">獨家站長造型鬆弛熊，周邊種類最齊全。</p>
                         <a href="https://www.google.com/maps/search/Rilakkuma+Store+Tokyo+Station" target="_blank" class="text-xs text-muji-earth hover:underline inline-flex items-center font-medium">
                             <i class="fa-solid fa-map-pin mr-1"></i>開啟地圖
                         </a>
                     </div>
-                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-earth transition">
-                        <h3 class="font-bold text-xs text-muji-text">2. 原宿 Kiddy Land 店</h3>
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-earth transition relative group">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="font-bold text-xs text-muji-text">2. 原宿 Kiddy Land 店</h3>
+                            <span class="text-[10px] text-muji-sage bg-muji-sage/15 px-1.5 py-0.5 rounded">表參道順路</span>
+                        </div>
                         <p class="text-xs text-muji-muted mt-1 mb-3">位於 4 樓，完美結合表參道精品購物行程。</p>
                         <a href="https://www.google.com/maps/search/Kiddy+Land+Harajuku" target="_blank" class="text-xs text-muji-earth hover:underline inline-flex items-center font-medium">
                             <i class="fa-solid fa-map-pin mr-1"></i>開啟地圖
                         </a>
                     </div>
-                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-earth transition">
-                        <h3 class="font-bold text-xs text-muji-text">3. 晴空塔 Solamachi 店</h3>
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-earth transition relative group">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="font-bold text-xs text-muji-text">3. 晴空塔 Solamachi 店</h3>
+                            <span class="text-[10px] text-cyan-700 bg-cyan-100/70 px-1.5 py-0.5 rounded">晴空塔限定</span>
+                        </div>
                         <p class="text-xs text-muji-muted mt-1 mb-3">位於 3 樓，獨家晴空塔高塔聯名周邊。</p>
                         <a href="https://www.google.com/maps/search/Rilakkuma+Store+Tokyo+Skytree" target="_blank" class="text-xs text-muji-earth hover:underline inline-flex items-center font-medium">
                             <i class="fa-solid fa-map-pin mr-1"></i>開啟地圖
                         </a>
                     </div>
-                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-earth transition">
-                        <h3 class="font-bold text-xs text-muji-text">4. 池袋 Sunshine City 店</h3>
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-earth transition relative group">
+                        <div class="flex items-center justify-between mb-1">
+                            <h3 class="font-bold text-xs text-muji-text">4. 池袋 Sunshine City 店</h3>
+                            <span class="text-[10px] text-purple-700 bg-purple-100/70 px-1.5 py-0.5 rounded">旗艦店級</span>
+                        </div>
                         <p class="text-xs text-muji-muted mt-1 mb-3">旗艦店等級，店面寬敞且適合最後採購。</p>
                         <a href="https://www.google.com/maps/search/Rilakkuma+Store+Ikebukuro" target="_blank" class="text-xs text-muji-earth hover:underline inline-flex items-center font-medium">
                             <i class="fa-solid fa-map-pin mr-1"></i>開啟地圖
@@ -501,11 +630,19 @@
                 </div>
             </div>
 
-            <!-- Luxury Brands Section -->
+            <!-- 💎 Luxury Brands Section (名店專區) -->
             <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
-                <h2 class="text-lg font-bold text-muji-text mb-2 flex items-center">
-                    <i class="fa-solid fa-gem text-muji-earth mr-2"></i>名店與精品奢華購物地圖
-                </h2>
+                <div class="pb-3 border-b border-muji-border mb-4 flex items-center justify-between">
+                    <div>
+                        <h2 class="text-lg font-bold text-muji-text flex items-center">
+                            <i class="fa-solid fa-gem text-muji-earth mr-2"></i>高端名牌與精品奢華購物地圖
+                        </h2>
+                        <p class="text-xs text-muji-muted mt-0.5">匯集國際頂級奢牌旗艦店、百貨退稅與外國人專屬優惠。</p>
+                    </div>
+                    <span class="text-[11px] text-muji-muted font-mono bg-muji-panel px-3 py-1 rounded-lg border border-muji-border hidden sm:block">
+                        LUXURY & FASHION
+                    </span>
+                </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
                     <div class="p-4 bg-muji-panel rounded-xl border border-muji-border">
                         <h3 class="font-bold text-xs text-muji-text mb-1.5">🛍️ 表參道 (Omotesando)</h3>
@@ -529,33 +666,56 @@
         <!-- TAB 4: APPS & TAXI -->
         <section id="sec-apps" class="tab-content hidden space-y-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                
                 <!-- Taxi Apps -->
                 <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
                     <h2 class="text-base font-bold text-muji-text mb-4 flex items-center">
                         <i class="fa-solid fa-taxi text-muji-earth mr-2"></i>日本計程車 / 的士叫車 Apps
                     </h2>
-                    <div class="space-y-3">
-                        <div class="p-3.5 bg-muji-panel rounded-xl border border-muji-border">
+                    <div class="space-y-4">
+                        
+                        <!-- GO -->
+                        <div class="p-4 bg-muji-panel rounded-xl border border-muji-border">
                             <div class="flex justify-between items-center mb-1">
                                 <h3 class="font-bold text-xs text-muji-text">GO (ゴー)</h3>
                                 <span class="bg-muji-earth/15 text-muji-earth text-[10px] px-2 py-0.5 rounded font-medium">日本市佔第一</span>
                             </div>
-                            <p class="text-xs text-muji-muted">支援綁定信用卡自動扣款，可指定 JPN TAXI 寬敞車型（適合戰利品與大行李箱）。</p>
+                            <p class="text-xs text-muji-muted mb-3">支援綁定信用卡自動扣款，可指定 JPN TAXI 寬敞車型（適合戰利品與大行李箱）。</p>
+                            <a href="https://apps.apple.com/app/id1254341709" target="_blank" class="inline-flex items-center space-x-2 px-3 py-1.5 bg-muji-card hover:bg-white text-muji-text rounded-lg text-xs font-medium transition border border-muji-border shadow-sm">
+                                <i class="fa-brands fa-apple text-sm text-muji-text"></i>
+                                <span>App Store 下載</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-muji-muted"></i>
+                            </a>
                         </div>
-                        <div class="p-3.5 bg-muji-panel rounded-xl border border-muji-border">
+
+                        <!-- S.RIDE -->
+                        <div class="p-4 bg-muji-panel rounded-xl border border-muji-border">
                             <div class="flex justify-between items-center mb-1">
                                 <h3 class="font-bold text-xs text-muji-text">S.RIDE</h3>
                                 <span class="bg-muji-sage/15 text-muji-sage text-[10px] px-2 py-0.5 rounded font-medium">東京首都圈極速</span>
                             </div>
-                            <p class="text-xs text-muji-muted">主打滑一下極速叫車，整合東京多家大型車隊，繁華區派車極快。</p>
+                            <p class="text-xs text-muji-muted mb-3">主打滑一下極速叫車，整合東京多家大型車隊，繁華區派車極快。</p>
+                            <a href="https://apps.apple.com/app/id1458325928" target="_blank" class="inline-flex items-center space-x-2 px-3 py-1.5 bg-muji-card hover:bg-white text-muji-text rounded-lg text-xs font-medium transition border border-muji-border shadow-sm">
+                                <i class="fa-brands fa-apple text-sm text-muji-text"></i>
+                                <span>App Store 下載</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-muji-muted"></i>
+                            </a>
                         </div>
-                        <div class="p-3.5 bg-muji-panel rounded-xl border border-muji-border">
+
+                        <!-- Uber -->
+                        <div class="p-4 bg-muji-panel rounded-xl border border-muji-border">
                             <div class="flex justify-between items-center mb-1">
                                 <h3 class="font-bold text-xs text-muji-text">Uber Japan</h3>
                                 <span class="bg-muji-border text-muji-text text-[10px] px-2 py-0.5 rounded font-medium">免下新 App</span>
                             </div>
-                            <p class="text-xs text-muji-muted">直接使用香港原有 Uber 帳號，全繁體中文介面，車資路線預估直覺。</p>
+                            <p class="text-xs text-muji-muted mb-3">直接使用香港原有 Uber 帳號，全繁體中文介面，車資路線預估直覺。</p>
+                            <a href="https://apps.apple.com/app/id368677368" target="_blank" class="inline-flex items-center space-x-2 px-3 py-1.5 bg-muji-card hover:bg-white text-muji-text rounded-lg text-xs font-medium transition border border-muji-border shadow-sm">
+                                <i class="fa-brands fa-apple text-sm text-muji-text"></i>
+                                <span>App Store 下載</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-muji-muted"></i>
+                            </a>
                         </div>
+
                     </div>
                 </div>
 
@@ -564,35 +724,98 @@
                     <h2 class="text-base font-bold text-muji-text mb-4 flex items-center">
                         <i class="fa-solid fa-train-subway text-muji-sage mr-2"></i>大眾交通 & 鐵路 Apps
                     </h2>
-                    <div class="space-y-3">
-                        <div class="p-3.5 bg-muji-panel rounded-xl border border-muji-border">
+                    <div class="space-y-4">
+                        
+                        <!-- Yahoo! 乘換案內 -->
+                        <div class="p-4 bg-muji-panel rounded-xl border border-muji-border">
                             <div class="flex justify-between items-center mb-1">
                                 <h3 class="font-bold text-xs text-muji-text">Yahoo! 乘換案內</h3>
                                 <span class="bg-muji-sage/15 text-muji-sage text-[10px] px-2 py-0.5 rounded font-medium">精準度最高</span>
                             </div>
-                            <p class="text-xs text-muji-muted">顯示精確乘車月台（幾號番線）與換乘最佳車廂，防迷路神器。</p>
+                            <p class="text-xs text-muji-muted mb-3">顯示精確乘車月台（幾號番線）與換乘最佳車廂，防迷路神器。</p>
+                            <a href="https://apps.apple.com/app/id299147843" target="_blank" class="inline-flex items-center space-x-2 px-3 py-1.5 bg-muji-card hover:bg-white text-muji-text rounded-lg text-xs font-medium transition border border-muji-border shadow-sm">
+                                <i class="fa-brands fa-apple text-sm text-muji-text"></i>
+                                <span>App Store 下載</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-muji-muted"></i>
+                            </a>
                         </div>
-                        <div class="p-3.5 bg-muji-panel rounded-xl border border-muji-border">
+
+                        <!-- Japan Transit Planner -->
+                        <div class="p-4 bg-muji-panel rounded-xl border border-muji-border">
                             <div class="flex justify-between items-center mb-1">
                                 <h3 class="font-bold text-xs text-muji-text">Japan Transit Planner (Jorudan)</h3>
                                 <span class="bg-muji-earth/15 text-muji-earth text-[10px] px-2 py-0.5 rounded font-medium">全繁體中文</span>
                             </div>
-                            <p class="text-xs text-muji-muted">支援中文輸入站名，清晰標示車資、轉乘次數與所需時間。</p>
+                            <p class="text-xs text-muji-muted mb-3">支援中文輸入站名，清晰標示車資、轉乘次數與所需時間。</p>
+                            <a href="https://apps.apple.com/app/id524326502" target="_blank" class="inline-flex items-center space-x-2 px-3 py-1.5 bg-muji-card hover:bg-white text-muji-text rounded-lg text-xs font-medium transition border border-muji-border shadow-sm">
+                                <i class="fa-brands fa-apple text-sm text-muji-text"></i>
+                                <span>App Store 下載</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-muji-muted"></i>
+                            </a>
                         </div>
-                        <div class="p-3.5 bg-muji-panel rounded-xl border border-muji-border">
+
+                        <!-- Apple Wallet Suica -->
+                        <div class="p-4 bg-muji-panel rounded-xl border border-muji-border">
                             <div class="flex justify-between items-center mb-1">
-                                <h3 class="font-bold text-xs text-muji-text">Apple Wallet Suica / PASMO</h3>
+                                <h3 class="font-bold text-xs text-muji-text">Suica (JR 東日本官方 App)</h3>
                                 <span class="bg-muji-sage/15 text-muji-sage text-[10px] px-2 py-0.5 rounded font-medium">嗶手機即進站</span>
                             </div>
-                            <p class="text-xs text-muji-muted">直接於 iPhone Wallet 新增卡片，使用香港信用卡隨時隨地加值。</p>
+                            <p class="text-xs text-muji-muted mb-3">可直接在 iPhone 錢包新增，或下載官方 App 進行進階管理與新幹線特急券綁定。</p>
+                            <a href="https://apps.apple.com/app/id1156875272" target="_blank" class="inline-flex items-center space-x-2 px-3 py-1.5 bg-muji-card hover:bg-white text-muji-text rounded-lg text-xs font-medium transition border border-muji-border shadow-sm">
+                                <i class="fa-brands fa-apple text-sm text-muji-text"></i>
+                                <span>App Store 下載</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-muji-muted"></i>
+                            </a>
                         </div>
+
                     </div>
                 </div>
+
             </div>
         </section>
 
         <!-- TAB 5: TOOLS & CHECKLIST -->
         <section id="sec-tools" class="tab-content hidden space-y-6">
+            
+            <!-- Tools Sub-Navigation / Feature Bar with Suica Tap -->
+            <div class="flex items-center justify-between flex-wrap gap-3 bg-muji-card p-4 rounded-2xl border border-muji-border shadow-sm">
+                <div class="flex items-center space-x-2 overflow-x-auto custom-scrollbar">
+                    <span class="text-xs text-muji-muted font-medium mr-1"><i class="fa-solid fa-wrench text-muji-earth mr-1"></i>工具功能：</span>
+                    <button class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-muji-sage text-white shadow-sm">
+                        💱 匯率與清單
+                    </button>
+                    <!-- Suica 卡 Tap 按鈕 -->
+                    <button onclick="openSuicaModal()" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-emerald-700 hover:bg-emerald-800 text-white transition flex items-center space-x-1.5 shadow-sm">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <span>Suica卡</span>
+                        <span class="bg-white/20 text-[10px] px-1.5 py-0.2 rounded ml-1">點擊開圖</span>
+                    </button>
+                </div>
+                <div class="text-[11px] text-muji-muted">
+                    💡 點擊「Suica卡」即可彈出 iPhone 綁定步驟圖解
+                </div>
+            </div>
+
+            <!-- Suica Quick Trigger Feature Banner -->
+            <div onclick="openSuicaModal()" class="bg-gradient-to-r from-emerald-800 to-teal-800 hover:opacity-95 text-white p-4 sm:p-5 rounded-2xl cursor-pointer transition shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-emerald-900">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-2xl">
+                        💳
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <h3 class="text-sm sm:text-base font-bold text-white tracking-wide">Suica 西瓜卡加入 iPhone 綁定與儲值教學</h3>
+                            <span class="bg-emerald-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold">教學圖解</span>
+                        </div>
+                        <p class="text-xs text-emerald-100 mt-1">打開 Apple Wallet 錢包、搜尋日本、最低儲值 1,000 日圓，點擊查看完整圖文指南。</p>
+                    </div>
+                </div>
+                <div class="self-end sm:self-center px-4 py-2 bg-white text-emerald-800 font-bold rounded-xl text-xs flex items-center space-x-1.5 shadow-sm whitespace-nowrap">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span>打開教學圖</span>
+                </div>
+            </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <!-- Currency Converter -->
                 <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm">
@@ -629,19 +852,113 @@
 
     </main>
 
+    <!-- 💳 Suica 卡 iPhone 教學彈出視窗 (Modal Popup) -->
+    <div id="suica-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-3 sm:p-4 overflow-y-auto">
+        <div class="bg-muji-bg rounded-2xl border border-muji-border shadow-2xl max-w-2xl w-full max-h-[92vh] flex flex-col overflow-hidden animate-in fade-in zoom-in duration-200">
+            
+            <!-- Modal Header -->
+            <div class="px-5 py-4 bg-muji-card border-b border-muji-border flex items-center justify-between sticky top-0 z-10">
+                <div class="flex items-center space-x-2.5">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold shadow-sm">
+                        <i class="fa-regular fa-credit-card"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm sm:text-base font-bold text-muji-text">Suica 西瓜卡加入 iPhone 步驟教學</h3>
+                        <p class="text-[11px] text-muji-muted">Apple Wallet 綁定、加值與使用指南</p>
+                    </div>
+                </div>
+                <button onclick="closeSuicaModal()" class="w-8 h-8 rounded-full bg-muji-panel hover:bg-muji-border text-muji-text flex items-center justify-center transition" aria-label="關閉">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content (Scrollable) -->
+            <div class="p-5 overflow-y-auto custom-scrollbar space-y-5">
+                
+                <!-- 圖片主體 -->
+                <div class="bg-white p-3 rounded-2xl border border-muji-border shadow-sm flex flex-col items-center">
+                    <div class="w-full flex justify-between items-center text-xs text-muji-muted mb-2 px-1">
+                        <span class="font-medium"><i class="fa-solid fa-image text-emerald-700 mr-1"></i>官方步驟圖解 (步驟 1~6)</span>
+                        <a href="https://assets.funliday.com/posts/wp-content/uploads/2022/12/26175718/My-project-1-16.jpg.webp" target="_blank" class="text-emerald-700 hover:underline flex items-center space-x-1">
+                            <span>另開原圖</span>
+                            <i class="fa-solid fa-up-right-from-square text-[10px]"></i>
+                        </a>
+                    </div>
+                    
+                    <img src="https://assets.funliday.com/posts/wp-content/uploads/2022/12/26175718/My-project-1-16.jpg.webp" alt="Suica 西瓜卡加入 iPhone 步驟 1~6" class="w-full max-w-lg rounded-xl border border-muji-border shadow-sm object-contain" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=800&auto=format&fit=crop';">
+                </div>
+
+                <!-- 完整文字步驟清晰對照 -->
+                <div class="bg-muji-card p-5 rounded-2xl border border-muji-border shadow-sm space-y-4">
+                    <h4 class="text-xs font-bold text-muji-text flex items-center uppercase tracking-wider">
+                        <i class="fa-solid fa-list-ol text-emerald-700 mr-2"></i>文字逐步教學指南
+                    </h4>
+
+                    <div class="space-y-3 text-xs text-muji-text">
+                        <div class="flex items-start space-x-3 p-2.5 bg-muji-panel rounded-xl border border-muji-border/70">
+                            <span class="w-5 h-5 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">1</span>
+                            <p class="leading-relaxed">首先打開 iPhone 上的<strong>「錢包（Apple Wallet）」</strong>應用程式，在右上角點擊<strong>「+」</strong>符號，然後選擇<strong>「交通卡」</strong>進行後續操作。</p>
+                        </div>
+
+                        <div class="flex items-start space-x-3 p-2.5 bg-muji-panel rounded-xl border border-muji-border/70">
+                            <span class="w-5 h-5 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">2</span>
+                            <p class="leading-relaxed">在搜索欄中輸入<strong>「日本」</strong>，系統會自動篩選出適用於日本的交通卡列表。目前 iPhone 錢包支援 <strong>Suica 卡（西瓜卡）</strong> 及 PASMO。</p>
+                        </div>
+
+                        <div class="flex items-start space-x-3 p-2.5 bg-muji-panel rounded-xl border border-muji-border/70">
+                            <span class="w-5 h-5 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">3</span>
+                            <p class="leading-relaxed">選擇<strong>「Suica 卡（西瓜卡）」</strong>，然後按照螢幕上的指示點擊<strong>「繼續」</strong>進行確認並接受使用條款。</p>
+                        </div>
+
+                        <div class="flex items-start space-x-3 p-2.5 bg-muji-panel rounded-xl border border-muji-border/70">
+                            <span class="w-5 h-5 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">4</span>
+                            <p class="leading-relaxed">手機畫面上會顯示需要進行儲值才能開通西瓜卡，這一步需要使用 iPhone 錢包中的其他信用卡或扣帳卡進行儲值（<strong>最低儲值金額為 1,000 日圓</strong>）。</p>
+                        </div>
+
+                        <div class="flex items-start space-x-3 p-2.5 bg-muji-panel rounded-xl border border-muji-border/70">
+                            <span class="w-5 h-5 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">5</span>
+                            <p class="leading-relaxed">完成儲值後，西瓜卡就成功添加到你的 iPhone 錢包中了，介面上還可以隨時顯示西瓜卡的<strong>實時餘額和交易紀錄</strong>。</p>
+                        </div>
+
+                        <div class="flex items-start space-x-3 p-2.5 bg-muji-panel rounded-xl border border-muji-border/70">
+                            <span class="w-5 h-5 rounded-full bg-emerald-700 text-white font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">6</span>
+                            <p class="leading-relaxed">在 iPhone 錢包中加入西瓜卡後，使用 <strong>Visa / Mastercard / JCB 信用卡</strong>隨時隨地儲值；如果沒有以上卡別，也可以在日本地鐵站的<strong>「支援手機感應加值機」</strong>以現金進行儲值。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 導遊小貼士 -->
+                <div class="p-3 bg-muji-panel rounded-xl border border-muji-border text-xs text-muji-muted flex items-start space-x-2">
+                    <i class="fa-solid fa-lightbulb text-amber-500 mt-0.5 shrink-0"></i>
+                    <span><strong>快捷過閘提示：</strong>iPhone 可將 Suica 設定為「快速交通卡 (Express Card)」，搭車過閘時<strong>無需解鎖 Face ID 或密碼</strong>，直接把手機靠近閘機感應即可秒過！</span>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="px-5 py-3.5 bg-muji-card border-t border-muji-border flex justify-end sticky bottom-0">
+                <button onclick="closeSuicaModal()" class="px-4 py-2 bg-muji-sage text-white text-xs font-semibold rounded-xl hover:opacity-90 transition shadow-sm">
+                    我知道了，關閉教學
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Interactive JS Script -->
     <script>
-        // Packing Checklist Items
+        // Checklist Items
         const checklistItems = [
             { id: 1, text: "09/09 10:35 辦理 HK Express 網上 Check-in (TDIV7K)", checked: false },
             { id: 2, text: "iPhone Wallet 設定 Suica 卡並預加值 5,000 日圓", checked: true },
             { id: 3, text: "下載並註冊 GO 計程車 App（綁定信用卡）", checked: true },
-            { id: 4, text: "護照（有效期限 6 個月以上）與託運 20KG 確認", checked: false },
-            { id: 5, text: "準備好日圓現金與外國人購物 Guest Card 申請需求", checked: false }
+            { id: 4, text: "9/13 熱海花火：預先劃好東京至熱海新幹線回聲號指定席", checked: false },
+            { id: 5, text: "護照（有效期限 6 個月以上）與託運 20KG 確認", checked: false },
+            { id: 6, text: "準備好日圓現金與外國人購物 Guest Card 申請需求", checked: false }
         ];
 
         let exchangeRate = 0.052;
 
+        // Main Navigation Switcher
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -652,6 +969,52 @@
             const activeBtn = document.getElementById(`tab-${tabId}`);
             activeBtn.className = "tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-sage text-white font-semibold shadow-sm";
         }
+
+        // Fireworks Sub-Tabs Switcher (Chofu vs Atami)
+        function switchFireworksSubTab(fwKey) {
+            document.querySelectorAll('.fw-panel').forEach(p => p.classList.add('hidden'));
+            document.querySelectorAll('.fw-sub-btn').forEach(b => {
+                b.className = "fw-sub-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition bg-muji-card text-muji-muted hover:bg-muji-panel border border-muji-border flex items-center space-x-1.5";
+            });
+
+            document.getElementById(`fw-panel-${fwKey}`).classList.remove('hidden');
+            const activeSubBtn = document.getElementById(`fw-subtab-${fwKey}`);
+            
+            if (fwKey === 'chofu') {
+                activeSubBtn.className = "fw-sub-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-muji-terracotta text-white shadow-sm flex items-center space-x-1.5";
+            } else {
+                activeSubBtn.className = "fw-sub-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition bg-muji-sage text-white shadow-sm flex items-center space-x-1.5";
+            }
+        }
+
+        // Suica Modal Logic
+        function openSuicaModal() {
+            const modal = document.getElementById('suica-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSuicaModal() {
+            const modal = document.getElementById('suica-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on Outside Click or Escape
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('suica-modal');
+            if (e.target === modal) {
+                closeSuicaModal();
+            }
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeSuicaModal();
+            }
+        });
 
         // Currency Converter Logic
         function convertCurrency() {
