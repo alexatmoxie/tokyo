@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sa TOKYO 2026 </title>
+    <title>SA TOKYO 2026</title>
 
-    <!-- Web App (PWA) 配置與 iOS 支援 -->
+    <!-- Web App (PWA) 設定與 iOS 支援 -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#F7F5F0">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -97,10 +97,11 @@
                         <span class="border-b border-muji-text/30 pb-0.5">UO870 (10:35 HKG)</span>
                     </a>
                     <span class="text-muji-border">|</span>
-                    <div class="flex items-center space-x-2">
+                    <!-- PNR 加入連結可點擊跳轉至 HK Express -->
+                    <a href="https://www.hkexpress.com/zh-HK" target="_blank" class="flex items-center space-x-2 hover:opacity-70 transition cursor-pointer" title="點擊前往 HK Express 官方網站">
                         <i class="fa-solid fa-ticket text-muji-earth"></i>
-                        <span>PNR: <strong class="text-muji-text">TDIV7K</strong></span>
-                    </div>
+                        <span>PNR: <strong class="text-muji-text border-b border-muji-text/30 pb-0.5">TDIV7K</strong></span>
+                    </a>
                 </div>
 
                 <!-- Countdown Badge -->
@@ -123,8 +124,12 @@
                         <i class="fa-solid fa-cloud-sun text-base"></i>
                     </div>
                     <div>
+                        <!-- 天氣預測標題加入官方天氣連結 -->
                         <h2 class="text-sm sm:text-base font-bold text-muji-text flex items-center">
-                            東京 7 天天氣預測指南 (9/11 – 9/17)
+                            <a href="https://www.japan.travel/tw/weather/kanto/tokyo/" target="_blank" class="hover:text-muji-earth hover:underline transition flex items-center group" title="點擊查看日本國家旅遊局實時天氣預測">
+                                <span>東京 7 天天氣預測指南 (9/11 – 9/17)</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-xs text-muji-muted group-hover:text-muji-earth"></i>
+                            </a>
                         </h2>
                         <p class="text-xs text-muji-muted">關東氣象實況數據 • 氣溫、降水機率與穿搭提示</p>
                     </div>
@@ -349,11 +354,11 @@
                     <i class="fa-solid fa-map-location-dot text-muji-earth mr-2"></i>Step by Step 到成田NEX車站
                 </h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <!-- Link 1: T2 到 NEX售票處 -->
-                    <a href="D1.pdf" target="_blank" class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-sage transition-all duration-300 hover:-translate-y-1 hover:shadow-md group flex items-center justify-between">
+                    <!-- Link 1: T2 到 NEX售票處 (D1.jpg) -->
+                    <a href="D1.jpg" target="_blank" class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-sage transition-all duration-300 hover:-translate-y-1 hover:shadow-md group flex items-center justify-between">
                         <div class="flex items-center space-x-3">
                             <div class="w-10 h-10 rounded-full bg-muji-card border border-muji-border flex items-center justify-center text-muji-sage shadow-sm">
-                                <i class="fa-solid fa-file-pdf text-lg"></i>
+                                <i class="fa-solid fa-image text-lg"></i>
                             </div>
                             <div>
                                 <h3 class="font-bold text-sm text-muji-text group-hover:text-muji-sage transition-colors">T2 到 NEX售票處</h3>
@@ -1102,7 +1107,7 @@
             </div>
         </section>
 
-        <!-- TAB 7: TOOLS & CHECKLIST -->
+        <!-- TAB 6: TOOLS & CHECKLIST -->
         <section id="sec-tools" class="tab-content hidden space-y-6 fade-in-up">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <!-- Currency Converter -->
@@ -1138,7 +1143,7 @@
             </div>
         </section>
 
-        <!-- TAB 8: VISIT JAPAN WEB -->
+        <!-- TAB 7: VISIT JAPAN WEB -->
         <section id="sec-vjw" class="tab-content hidden space-y-6 fade-in-up">
             <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                 <div class="pb-3 border-b border-muji-border mb-6 flex items-center justify-between">
@@ -1178,7 +1183,7 @@
                                 不熟悉填寫流程？這份詳細的 2026 最新圖文攻略將一步步教你如何快速完成入境與海關申報手續。
                             </p>
                         </div>
-                        <a href="https://hk.trip.com/guide/info/Visit+Japan+Web.html?allianceid=14882&sid=326301445&ppcid=adid-822099557037_akid-dsa-2444031750932_adgid-199610768837&utm_source=google&utm_medium=cpc&utm_campaign=24172294464&gad_source=1&gad_campaignid=24172294464&gbraid=0AAAAABn2eFJGt5JDrixtmgYvTSUS68nXI&gclid=CjwKCAjwwfnUBhAtEiwAfQpAYsCmpCn9QyApPASQGRCov3bwdudHwZFZTa6U9lMGhHtRvDzQydrdGxoCs6UQAvD_BwE&webpage=10650146128&unilink=1&ouid=ctag.hash.bG3RFcZYpr8h&linkid=e79143a8-1c5b-4f57-b1d2-d3a696cb89b3&ibuwakeuptag=other_ul&mktTag=1&from_native_page=1" target="_blank" class="block w-full text-center py-2.5 bg-muji-earth text-white font-medium rounded-xl text-xs hover:opacity-90 transition shadow-sm">
+                        <a href="https://hk.trip.com/guide/info/Visit+Japan+Web.html?allianceid=14882&sid=326301445&ppcid=adid-822099557037_akid-dsa-2444031750932_adgid-199610768837&utm_source=google&utm_medium=cpc&utm_campaign=24172294464&gad_source=1&gad_campaignid=24172294464&gbraid=0AAAAABn2eFJGt5JDrixtmgYvTSUS68nXI&gclid=CjwKCAjwwfnUBhAtEiwAfQpAYsCmpCn9QyApPASQGRCov3bwdudHwZFZTa6U9lMGhHtRvDzQydrdGxoCs6UQAvD_BwE&webpage=10650146128&unilink=1&ouid=ctag.hash.bG3RFcZYpr8h&linkid=e79143a8-1c5b-4f57-b1d2-d3a696cb89b3&ibuwakeuptag=other_ul&mktTag=1&from-native_page=1" target="_blank" class="block w-full text-center py-2.5 bg-muji-earth text-white font-medium rounded-xl text-xs hover:opacity-90 transition shadow-sm">
                             <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>查看圖文教學
                         </a>
                     </div>
